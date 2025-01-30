@@ -29,7 +29,7 @@ video_clip_mode = 'single_middle'
 [model]
 type = 'hunyuan-video'
 transformer_path = '/models/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors'
-vae_path = '/models/hunyuan_video_vae_fp32.safetensors'
+vae_path = '/models/hunyuan_video_vae_bf16.safetensors'
 llm_path = '/models/llm'
 clip_path = '/models/clip'
 dtype = 'bfloat16'
