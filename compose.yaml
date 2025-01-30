@@ -1,0 +1,37 @@
+services:
+  server:
+    image: diffusionpipe
+    ports:
+      - ${JUPYTER_PORT}:8888
+    volumes:
+        - type: volume
+          source: diffusionpipe_output
+          target: /output
+        - type: volume
+          source: diffusionpipe_models
+          target: /models
+        - type: volume
+          source: diffusionpipe_dataset
+          target: /dataset
+        - ./models:/importModels
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+     - JUPYTER_PORT=${JUPYTER_PORT}
+     - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+volumes:
+    diffusionpipe_output:
+        name: diffusionpipe_output
+    diffusionpipe_models:
+        name: diffusionpipe_models
+    diffusionpipe_dataset:
+        name: diffusionpipe_dataset
