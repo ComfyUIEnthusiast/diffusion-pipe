@@ -1,6 +1,5 @@
 jupyter
 notebook
-flash-attn
 torch
 torchvision
 torchaudio

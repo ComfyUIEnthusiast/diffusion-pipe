@@ -1,5 +1,7 @@
 # Docker_Diffusion-Pipe
-Currently I have to pip uninstall flash-attn from the command line and re pip install it. Not sure why.
+Currently I have to pip uninstall flash-attn from the command line and re pip install it like below. Not sure why:
+    pip uninstall flash-attn
+	FLASH_ATTENTION_FORCE_BUILD=TRUE pip install flash-attn
 Add a wslconfig to grant more shared memory to the wsl environment if running on windows:
 	[wsl2]
 	memory=48GB

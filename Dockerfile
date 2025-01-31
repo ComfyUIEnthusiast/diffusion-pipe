@@ -16,11 +16,12 @@ RUN git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe
 
 
 RUN conda install -y cuda -c nvidia
-RUN conda install flash_attn
 ADD requirements.txt .
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 WORKDIR /diffusion-pipe
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 ENV JUPYTER_PORT=$JUPYTER_PORT
 ENV JUPYTER_TOKEN=$JUPYTER_TOKEN

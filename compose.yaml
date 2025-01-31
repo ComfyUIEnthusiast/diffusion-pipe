@@ -28,7 +28,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: prod
 volumes:
     diffusionpipe_output:
         name: diffusionpipe_output
