@@ -16,6 +16,6 @@ frame_buckets = [1, 33]
 
 [[directory]]
 # Set this to where your dataset is
-path = '/dataset/datasetLocation'
+path = '/dataset/Spanking'
 # Reduce as necessary
-num_repeats = 1
+num_repeats = 5

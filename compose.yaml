@@ -1,6 +1,7 @@
 services:
   server:
-    image: diffusionpipe
+    image: diffusion-pipe
+    ipc: host
     ports:
       - ${JUPYTER_PORT}:8888
     volumes:
