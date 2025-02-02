@@ -1,6 +1,6 @@
 # Resolution settings.
 # Can adjust this to 1024 for image training, especially on 24gb cards.
-resolutions = [512]
+resolutions = [128]
 
 # Aspect ratio bucketing settings
 enable_ar_bucket = true
@@ -12,7 +12,7 @@ num_ar_buckets = 7
 #frame_buckets = [1]
 
 # Mix of images and videos (at 33 and 60 frames long)
-frame_buckets = [33]
+frame_buckets = [1,33]
 
 [[directory]]
 # Set this to where your dataset is

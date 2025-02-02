@@ -3,7 +3,7 @@ output_dir = '/output'
 dataset = '/configs/dataset.toml'
 
 # Training settings
-epochs = 200
+epochs = 100
 micro_batch_size_per_gpu = 1
 pipeline_stages = 1
 gradient_accumulation_steps = 4
@@ -18,7 +18,7 @@ eval_gradient_accumulation_steps = 1
 
 # misc settings
 save_every_n_epochs = 5
-checkpoint_every_n_epochs = 20
+checkpoint_every_n_epochs = 5
 activation_checkpointing = true
 partition_method = 'parameters'
 save_dtype = 'bfloat16'
@@ -38,12 +38,13 @@ timestep_sample_method = 'logit_normal'
 
 [adapter]
 type = 'lora'
-rank = 16
+rank = 32
 dtype = 'bfloat16'
+#init_from_existing = '/configs'
 
 [optimizer]
 type = 'adamw_optimi'
-lr = 2e-5
+lr = 5e-4
 betas = [0.9, 0.99]
-weight_decay = 0.02
+weight_decay = 0.01
 eps = 1e-8
