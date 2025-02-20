@@ -13,7 +13,7 @@ Run this in the diffusion-pipe directory:
 
 	NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" deepspeed --num_gpus=1 train.py --deepspeed --config /configs/config.toml
 
-To continue training from an existing LoRA, uncomment the line config.toml for "init_from_existing", and point it at a directory with an adapter.safetensors
+To continue training from an existing LoRA, uncomment the line config.toml for "init_from_existing", and point it at a directory with an adapter_model.safetensors
 
 To continue from checkpoint:
 
