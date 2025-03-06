@@ -27,11 +27,8 @@ steps_per_print = 1
 video_clip_mode = 'single_middle'
 
 [model]
-type = 'hunyuan-video'
-transformer_path = '/models/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors'
-vae_path = '/models/hunyuan_video_vae_bf16.safetensors'
-llm_path = '/models/llm'
-clip_path = '/models/clip'
+type = 'wan'
+ckpt_path = '/models/Wan2.1-T2V-1.3B'
 dtype = 'bfloat16'
 transformer_dtype = 'float8'
 timestep_sample_method = 'logit_normal'

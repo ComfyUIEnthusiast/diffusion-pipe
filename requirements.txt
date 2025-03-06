@@ -3,3 +3,6 @@ notebook
 torch
 torchvision
 torchaudio
+easydict
+ftfy
+torchao
