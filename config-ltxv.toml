@@ -3,7 +3,7 @@ output_dir = '/output'
 dataset = '/configs/dataset.toml'
 
 # Training settings
-epochs = 500
+epochs = 100
 micro_batch_size_per_gpu = 1
 pipeline_stages = 1
 gradient_accumulation_steps = 1
@@ -29,6 +29,7 @@ video_clip_mode = 'single_middle'
 [model]
 type = 'ltx-video'
 diffusers_path = '/models/LTX-Video'
+single_file_path = '/models/LTX-Video/ltxv-13b-0.9.7-distilled-fp8.safetensors'
 dtype = 'bfloat16'
 transformer_dtype = 'bfloat16'
 timestep_sample_method = 'logit_normal'
@@ -41,7 +42,7 @@ dtype = 'bfloat16'
 
 [optimizer]
 type = 'adamw_optimi'
-lr = 2e-4
+lr = 2e-5
 betas = [0.9, 0.99]
 weight_decay = 0.02
 eps = 1e-8

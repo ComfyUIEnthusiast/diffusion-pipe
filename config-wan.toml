@@ -25,10 +25,11 @@ save_dtype = 'bfloat16'
 caching_batch_size = 1
 steps_per_print = 1
 video_clip_mode = 'single_middle'
+blocks_to_swap = 16
 
 [model]
 type = 'wan'
-ckpt_path = '/models/Wan2.1-T2V-1.3B'
+ckpt_path = '/models/Wan2.1-T2V-14B'
 dtype = 'bfloat16'
 transformer_dtype = 'float8'
 timestep_sample_method = 'logit_normal'
@@ -41,7 +42,7 @@ dtype = 'bfloat16'
 
 [optimizer]
 type = 'adamw_optimi'
-lr = 2e-5
+lr = 5e-5
 betas = [0.9, 0.99]
-weight_decay = 0.02
+weight_decay = 0.01
 eps = 1e-8

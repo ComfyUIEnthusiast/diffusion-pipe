@@ -14,7 +14,6 @@ services:
         - type: volume
           source: diffusionpipe_dataset
           target: /dataset
-        - ./models:/importModels
     deploy:
       resources:
         reservations:

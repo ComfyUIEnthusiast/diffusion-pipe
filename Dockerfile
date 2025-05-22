@@ -16,7 +16,10 @@ RUN git clone --recurse-submodules https://github.com/tdrussell/diffusion-pipe
 
 
 RUN conda install -y cuda -c nvidia
+RUN conda create -n diffusion-pipe python=3.12
+ENV PATH /opt/conda/envs/diffusion-pipe/bin:$PATH
 ADD requirements.txt .
+RUN pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 #RUN pip install -r requirements.txt
 WORKDIR /diffusion-pipe
