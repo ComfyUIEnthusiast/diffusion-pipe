@@ -29,10 +29,10 @@ WORKDIR /workspace/diffusion-pipe
 # Install PyTorch 2.10 + torchvision compatible with CUDA 12.8
 RUN python3 -m pip install --no-cache-dir \
     torch==2.10.0+cu128 \
-    torchvision==0.15.2+cu128 \
-    torchaudio==2.0.2+cu128 \
+    torchvision==0.25.0+cu128 \
+    torchaudio==2.10.0+cu128 \
     --index-url https://download.pytorch.org/whl/cu128
-
+	
 # Install DeepSpeed with CUDA ops
 RUN DS_BUILD_OPS=1 python3 -m pip install --no-cache-dir deepspeed
 
