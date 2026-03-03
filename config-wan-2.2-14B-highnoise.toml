@@ -1,0 +1,51 @@
+# Dataset config file.
+output_dir = '/output'
+dataset = '/configs/dataset.toml'
+
+# Training settings
+epochs = 100
+micro_batch_size_per_gpu = 1
+pipeline_stages = 1
+gradient_accumulation_steps = 1
+gradient_clipping = 1.0
+warmup_steps = 100
+
+# eval settings
+eval_every_n_epochs = 1
+eval_before_first_step = true
+eval_micro_batch_size_per_gpu = 1
+eval_gradient_accumulation_steps = 1
+
+# misc settings
+save_every_n_epochs = 10
+checkpoint_every_n_epochs = 10
+activation_checkpointing = true
+partition_method = 'parameters'
+save_dtype = 'bfloat16'
+caching_batch_size = 1
+steps_per_print = 1
+video_clip_mode = 'single_beginning'
+blocks_to_swap = 16
+
+[model]
+type = 'wan'
+ckpt_path = '/models/Wan2.2-T2V-A14B'
+transformer_path = '/models/wan2.2_t2v_high_noise_14B_fp16.safetensors'
+llm_path = '/models/umt5_xxl_fp16.safetensors'
+dtype = 'bfloat16'
+transformer_dtype = 'float8'
+min_t = 0.875
+max_t = 1
+
+[adapter]
+type = 'lora'
+rank = 16
+dtype = 'bfloat16'
+#init_from_existing = '/configs'
+
+[optimizer]
+type = 'adamw_optimi'
+lr = 5e-5
+betas = [0.9, 0.99]
+weight_decay = 0.01
+eps = 1e-8
