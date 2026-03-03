@@ -6,3 +6,7 @@ torchaudio
 easydict
 ftfy
 torchao
+torch
+torchvision
+torchaudio
+comfy-kitchen
